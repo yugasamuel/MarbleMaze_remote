@@ -83,8 +83,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         } else if node.name == "star" {
             node.removeFromParent()
             score += 1
+            
         } else if node.name == "finish" {
-            // next level?
+            run(SKAction.playSoundFileNamed("small-applause-6695.mp3", waitForCompletion: false))
+            player.removeFromParent()
+
+            createPlayer()
         }
     }
     
