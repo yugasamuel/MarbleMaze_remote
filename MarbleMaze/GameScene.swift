@@ -15,6 +15,11 @@ enum CollisionTypes: UInt32 {
     case star = 4
     case vortex = 8
     case finish = 16
+    case teleport = 32
+}
+
+enum VortexType {
+    case normal, teleport
 }
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
@@ -70,16 +75,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             player.physicsBody?.isDynamic = false
             isGameOver = true
             score -= 1
-
+            
             let move = SKAction.move(to: node.position, duration: 0.25)
             let scale = SKAction.scale(to: 0.0001, duration: 0.25)
             let remove = SKAction.removeFromParent()
             let sequence = SKAction.sequence([move, scale, remove])
-
+            
             player.run(sequence) { [weak self] in
                 self?.createPlayer()
                 self?.isGameOver = false
             }
+        } else if node.name == "teleport" {
+            let newPosition = CGPoint(x: 600, y: 533)
+            let moveAction = SKAction.move(to: newPosition, duration: 0.25)
+            player.run(moveAction)
+            
         } else if node.name == "star" {
             node.removeFromParent()
             score += 1
@@ -101,7 +111,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         player.physicsBody?.linearDamping = 0.5
         
         player.physicsBody?.categoryBitMask = CollisionTypes.player.rawValue
-        player.physicsBody?.contactTestBitMask = CollisionTypes.star.rawValue | CollisionTypes.vortex.rawValue | CollisionTypes.finish.rawValue
+        player.physicsBody?.contactTestBitMask = CollisionTypes.star.rawValue | CollisionTypes.vortex.rawValue | CollisionTypes.finish.rawValue | CollisionTypes.teleport.rawValue
         player.physicsBody?.collisionBitMask = CollisionTypes.wall.rawValue
         addChild(player)
     }
@@ -123,11 +133,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 
                 if letter == "x" {
                     createBlock(on: position)
-                } else if letter == "v"  {
-                    createVortex(on: position)
-                } else if letter == "s"  {
+                } else if letter == "v" {
+                    createVortex(on: position, type: .normal)
+                } else if letter == "t" {
+                    createVortex(on: position, type: .teleport)
+                } else if letter == "s" {
                     createStar(on: position)
-                } else if letter == "f"  {
+                } else if letter == "f" {
                     createFinishFlag(on: position)
                 } else if letter == " " {
                     // this is an empty space – do nothing!
@@ -148,15 +160,25 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         addChild(node)
     }
     
-    func createVortex(on position: CGPoint) {
+    func createVortex(on position: CGPoint, type: VortexType) {
         let node = SKSpriteNode(imageNamed: "vortex")
-        node.name = "vortex"
+        
+        switch type {
+        case .normal:
+            node.name = "vortex"
+            node.physicsBody?.categoryBitMask = CollisionTypes.vortex.rawValue
+        case .teleport:
+            node.name = "teleport"
+            node.physicsBody?.categoryBitMask = CollisionTypes.teleport.rawValue
+            node.color = SKColor.green
+            node.colorBlendFactor = 1.0
+        }
+        
         node.position = position
         node.run(SKAction.repeatForever(SKAction.rotate(byAngle: .pi, duration: 1)))
         node.physicsBody = SKPhysicsBody(circleOfRadius: node.size.width / 2)
         node.physicsBody?.isDynamic = false
         
-        node.physicsBody?.categoryBitMask = CollisionTypes.vortex.rawValue
         node.physicsBody?.contactTestBitMask = CollisionTypes.player.rawValue
         node.physicsBody?.collisionBitMask = 0
         addChild(node)
@@ -192,6 +214,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         guard let touch = touches.first else { return }
         let location = touch.location(in: self)
         lastTouchPosition = location
+        print(location)
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
