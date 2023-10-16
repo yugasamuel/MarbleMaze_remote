@@ -15,6 +15,14 @@
 		6535D7C62AD98EBC001D6A45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6535D7C42AD98EBC001D6A45 /* Main.storyboard */; };
 		6535D7C82AD98EBD001D6A45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6535D7C72AD98EBD001D6A45 /* Assets.xcassets */; };
 		6535D7CB2AD98EBD001D6A45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6535D7C92AD98EBD001D6A45 /* LaunchScreen.storyboard */; };
+		658404F62ADD3B2B0068E029 /* Localization_ Switching Language.fig in Resources */ = {isa = PBXBuildFile; fileRef = 658404EB2ADD3B2B0068E029 /* Localization_ Switching Language.fig */; };
+		658404F72ADD3B2B0068E029 /* finish@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 658404EC2ADD3B2B0068E029 /* finish@2x.png */; };
+		658404F82ADD3B2B0068E029 /* level1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 658404ED2ADD3B2B0068E029 /* level1.txt */; };
+		658404F92ADD3B2B0068E029 /* star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 658404EE2ADD3B2B0068E029 /* star@2x.png */; };
+		658404FA2ADD3B2B0068E029 /* player@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 658404EF2ADD3B2B0068E029 /* player@2x.png */; };
+		658404FD2ADD3B2B0068E029 /* block@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 658404F32ADD3B2B0068E029 /* block@2x.png */; };
+		658404FE2ADD3B2B0068E029 /* vortex@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 658404F42ADD3B2B0068E029 /* vortex@2x.png */; };
+		658404FF2ADD3B2B0068E029 /* background@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 658404F52ADD3B2B0068E029 /* background@2x.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +35,14 @@
 		6535D7C52AD98EBC001D6A45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6535D7C72AD98EBD001D6A45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6535D7CA2AD98EBD001D6A45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		658404EB2ADD3B2B0068E029 /* Localization_ Switching Language.fig */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Localization_ Switching Language.fig"; sourceTree = "<group>"; };
+		658404EC2ADD3B2B0068E029 /* finish@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "finish@2x.png"; sourceTree = "<group>"; };
+		658404ED2ADD3B2B0068E029 /* level1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = level1.txt; sourceTree = "<group>"; };
+		658404EE2ADD3B2B0068E029 /* star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star@2x.png"; sourceTree = "<group>"; };
+		658404EF2ADD3B2B0068E029 /* player@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player@2x.png"; sourceTree = "<group>"; };
+		658404F32ADD3B2B0068E029 /* block@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "block@2x.png"; sourceTree = "<group>"; };
+		658404F42ADD3B2B0068E029 /* vortex@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vortex@2x.png"; sourceTree = "<group>"; };
+		658404F52ADD3B2B0068E029 /* background@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "background@2x.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,8 +83,24 @@
 				6535D7C42AD98EBC001D6A45 /* Main.storyboard */,
 				6535D7C72AD98EBD001D6A45 /* Assets.xcassets */,
 				6535D7C92AD98EBD001D6A45 /* LaunchScreen.storyboard */,
+				658404EA2ADD3B2B0068E029 /* Content-Project26 */,
 			);
 			path = MarbleMaze;
+			sourceTree = "<group>";
+		};
+		658404EA2ADD3B2B0068E029 /* Content-Project26 */ = {
+			isa = PBXGroup;
+			children = (
+				658404EB2ADD3B2B0068E029 /* Localization_ Switching Language.fig */,
+				658404EC2ADD3B2B0068E029 /* finish@2x.png */,
+				658404ED2ADD3B2B0068E029 /* level1.txt */,
+				658404EE2ADD3B2B0068E029 /* star@2x.png */,
+				658404EF2ADD3B2B0068E029 /* player@2x.png */,
+				658404F32ADD3B2B0068E029 /* block@2x.png */,
+				658404F42ADD3B2B0068E029 /* vortex@2x.png */,
+				658404F52ADD3B2B0068E029 /* background@2x.jpg */,
+			);
+			path = "Content-Project26";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,11 +161,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				658404F62ADD3B2B0068E029 /* Localization_ Switching Language.fig in Resources */,
+				658404FE2ADD3B2B0068E029 /* vortex@2x.png in Resources */,
 				6535D7C62AD98EBC001D6A45 /* Main.storyboard in Resources */,
+				658404FA2ADD3B2B0068E029 /* player@2x.png in Resources */,
+				658404FD2ADD3B2B0068E029 /* block@2x.png in Resources */,
+				658404FF2ADD3B2B0068E029 /* background@2x.jpg in Resources */,
+				658404F82ADD3B2B0068E029 /* level1.txt in Resources */,
+				658404F72ADD3B2B0068E029 /* finish@2x.png in Resources */,
 				6535D7BD2AD98EBC001D6A45 /* GameScene.sks in Resources */,
 				6535D7C82AD98EBD001D6A45 /* Assets.xcassets in Resources */,
 				6535D7CB2AD98EBD001D6A45 /* LaunchScreen.storyboard in Resources */,
 				6535D7BF2AD98EBC001D6A45 /* Actions.sks in Resources */,
+				658404F92ADD3B2B0068E029 /* star@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +346,7 @@
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -334,6 +375,7 @@
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
